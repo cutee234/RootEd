@@ -1,0 +1,53 @@
+{
+  "id": "s3-apk-anatomy",
+  "name": "APK Anatomy",
+  "icon": "🧬",
+  "order": 3,
+  "lessons": [
+    {
+      "id": "s3_l1",
+      "order": 1,
+      "title": "AndroidManifest.xml",
+      "text": "The AndroidManifest.xml is the blueprint of every Android app. It declares the app's package name, version, permissions it needs, all Activities, Services, Broadcast Receivers, and Content Providers. It also declares if components are exported (accessible from outside).",
+      "example": "Think of AndroidManifest.xml like a building's blueprints. It shows every room (Activity), every entrance (exported components), what keys are needed (permissions), and the building's address (package name).",
+      "tfQuestion": "AndroidManifest.xml declares all the components (Activities, Services) of an app.",
+      "tfAnswer": true
+    },
+    {
+      "id": "s3_l2",
+      "order": 2,
+      "title": "classes.dex - The Code",
+      "text": "The classes.dex file contains all your Java/Kotlin code compiled into Dalvik bytecode. This is what the Android Runtime (ART) executes. You can have multiple dex files (classes.dex, classes2.dex) if your app is large. Tools like jadx can decompile this back to readable Java.",
+      "example": "Think of classes.dex like a cookbook written in a secret language. The chef (Android Runtime) can read it and cook the dish (run your app). A food critic (attacker) with a translation book (jadx) can read the recipe too.",
+      "tfQuestion": "The classes.dex file contains the app's compiled code that can be decompiled back to readable Java.",
+      "tfAnswer": true
+    },
+    {
+      "id": "s3_l3",
+      "order": 3,
+      "title": "Resources and Assets",
+      "text": "The res/ folder contains resources like images (drawable), layouts (layout), strings (values), and styles. The assets/ folder contains raw files bundled with the app. Resources get compiled and optimized. Assets stay as-is. Both can contain sensitive data if developers are not careful.",
+      "example": "Think of res/ like a organized closet where everything has a specific place and label. Think of assets/ like a storage box where you just throw things in. Both can contain valuable items if you are not careful about what you store.",
+      "tfQuestion": "Files in the assets/ folder are compiled and optimized like resources.",
+      "tfAnswer": false
+    },
+    {
+      "id": "s3_l4",
+      "order": 4,
+      "title": "Signing and Verification",
+      "text": "Every APK must be signed with a digital certificate before it can be installed. The signature proves who made the app and ensures it has not been tampered with. Android checks the signature before installing. If the signature does not match, the update is rejected. Your signing key is your identity.",
+      "example": "Think of APK signing like a wax seal on a letter. The seal (signature) proves who sent it and that no one opened it on the way. If the seal is broken (tampered), the recipient (Android) knows something is wrong.",
+      "tfQuestion": "An APK can be installed on Android without being signed.",
+      "tfAnswer": false
+    },
+    {
+      "id": "s3_l5",
+      "order": 5,
+      "title": "META-INF and Certificates",
+      "text": "The META-INF folder inside an APK contains the signing certificates and signature files. It includes MANIFEST.MF (list of files), CERT.SF (signatures), and CERT.RSA or CERT.DSA (the actual certificate). Tools like keytool and apksigner can inspect these. This is how you verify an APK's authenticity.",
+      "example": "Think of META-INF like the notary section of a legal document. It contains the official stamps, signatures, and certificates that prove the document is genuine. Without it, the document (APK) is not trustworthy.",
+      "tfQuestion": "The META-INF folder contains the signing certificates that verify the APK's authenticity.",
+      "tfAnswer": true
+    }
+  ]
+}
