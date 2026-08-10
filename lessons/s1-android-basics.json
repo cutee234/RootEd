@@ -1,0 +1,53 @@
+{
+  "id": "s1-android-basics",
+  "name": "Android Basics",
+  "icon": "📱",
+  "order": 1,
+  "lessons": [
+    {
+      "id": "s1_l1",
+      "order": 1,
+      "title": "What is Android?",
+      "text": "Android is a Linux-based mobile operating system developed by Google. It powers over 3 billion devices worldwide. Think of it as the brain of your phone that manages everything from your screen touches to your apps running in background.",
+      "example": "Think of Android like the conductor of an orchestra. Without it, all the instruments (hardware) cannot play together. Android makes your camera, microphone, screen, and apps work in harmony.",
+      "tfQuestion": "Android is based on the Linux kernel.",
+      "tfAnswer": true
+    },
+    {
+      "id": "s1_l2",
+      "order": 2,
+      "title": "What are Apps?",
+      "text": "Apps (Applications) are software programs that run on Android. Each app is isolated from others by default, running in its own sandbox. This isolation is a core security feature that prevents one app from reading another app's data without permission.",
+      "example": "Imagine each app lives in its own apartment in a building. Without the landlord's (Android's) permission, one apartment cannot enter another. This is called sandboxing.",
+      "tfQuestion": "By default, one Android app can freely read another app's private data.",
+      "tfAnswer": false
+    },
+    {
+      "id": "s1_l3",
+      "order": 3,
+      "title": "What is an APK?",
+      "text": "APK stands for Android Package Kit. It is the file format used to distribute and install Android apps. An APK is actually a ZIP file containing the app's code, resources, assets, and manifest. When you download an app from Play Store, you are downloading an APK file.",
+      "example": "Think of an APK like a sealed envelope. Inside it contains the letter (code), the decorations (resources), and the return address (manifest). You cannot read the letter without opening (installing) the envelope.",
+      "tfQuestion": "An APK file is actually a ZIP archive containing the app's code and resources.",
+      "tfAnswer": true
+    },
+    {
+      "id": "s1_l4",
+      "order": 4,
+      "title": "Activity = One Screen",
+      "text": "In Android, an Activity represents a single screen with a user interface. When you open WhatsApp, the chat list is one Activity. When you tap a conversation, that is a different Activity. Each Activity has its own lifecycle: created, started, resumed, paused, stopped, and destroyed.",
+      "example": "Think of Activities like pages in a book. Each page (Activity) shows different content. When you flip to the next page, the previous page is paused. The book's table of contents is like the AndroidManifest that lists all pages.",
+      "tfQuestion": "One Activity in Android can display multiple unrelated screens simultaneously.",
+      "tfAnswer": false
+    },
+    {
+      "id": "s1_l5",
+      "order": 5,
+      "title": "Permissions",
+      "text": "Permissions are Android's way of protecting user privacy. Before an app can access sensitive data like your camera, contacts, or location, it must request permission. Since Android 6.0, dangerous permissions must be requested at runtime, meaning the user sees a popup asking for approval.",
+      "example": "Think of permissions like a hotel key card system. Your room (app) needs a key card (permission) to open the door. Without checking in at reception (user approval), you cannot access the room. The hotel manager (Android) decides who gets which key.",
+      "tfQuestion": "Since Android 6.0, apps must ask for dangerous permissions while the app is running, not just at install time.",
+      "tfAnswer": true
+    }
+  ]
+}
