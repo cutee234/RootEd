@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "lastUpdated": "2026-08-09",
+  "tips": {
+    "file": "tips.json",
+    "count": 50
+  },
+  "stories": {
+    "file": "stories.json",
+    "count": 20
+  },
+  "sections": [
+    {
+      "id": "s1-android-basics",
+      "name": "Android Basics",
+      "icon": "📱",
+      "order": 1,
+      "file": "lessons/s1-android-basics.json",
+      "lessonCount": 5,
+      "status": "published"
+    },
+    {
+      "id": "s2-permissions",
+      "name": "Permissions Deep Dive",
+      "icon": "🔐",
+      "order": 2,
+      "file": "lessons/s2-permissions.json",
+      "lessonCount": 5,
+      "status": "published"
+    },
+    {
+      "id": "s3-apk-anatomy",
+      "name": "APK Anatomy",
+      "icon": "🧬",
+      "order": 3,
+      "file": "lessons/s3-apk-anatomy.json",
+      "lessonCount": 5,
+      "status": "published"
+    }
+  ],
+  "upcoming": [
+    {
+      "id": "s4-networking",
+      "name": "Networking Security",
+      "icon": "🌐",
+      "order": 4,
+      "status": "coming-soon",
+      "releaseDate": "2026-08-18"
+    }
+  ]
+}
