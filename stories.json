@@ -1,0 +1,124 @@
+{
+  "stories": [
+    {
+      "id": "n1",
+      "title": "The hospital that paid",
+      "text": "A hospital app had an exported content provider. Attackers read patient records through it, then encrypted the database. The hospital paid the ransom.",
+      "lesson": "Exported"
+    },
+    {
+      "id": "n2",
+      "title": "The update that was not",
+      "text": "Attackers bought an abandoned popular app and pushed an update that was ransomware. 100000 users updated without thinking.",
+      "lesson": "APK"
+    },
+    {
+      "id": "n3",
+      "title": "The flashlight that saw everything",
+      "text": "A free flashlight app requested 23 permissions including camera, contacts, SMS. 50 million users installed it. It exfiltrated data for 3 years.",
+      "lesson": "Permissions"
+    },
+    {
+      "id": "n4",
+      "title": "The clipboard thief",
+      "text": "A popular social media app was caught reading clipboard contents every time opened. Users who copied passwords or crypto seeds had them silently sent away.",
+      "lesson": "Storage"
+    },
+    {
+      "id": "n5",
+      "title": "The backup that leaked millions",
+      "text": "A banking app enabled adb backup. Researchers extracted the entire database including credit card numbers and encryption keys.",
+      "lesson": "Backup"
+    },
+    {
+      "id": "n6",
+      "title": "The HTTP banking app",
+      "text": "A regional bank mobile app used HTTP for login. An attacker on WiFi captured 200 customer credentials in one afternoon.",
+      "lesson": "Network"
+    },
+    {
+      "id": "n7",
+      "title": "The hardcoded AWS keys",
+      "text": "Developers hardcoded AWS access keys in a fitness app. Attackers found them via decompilation and racked up 50000 dollars in mining charges.",
+      "lesson": "Secrets"
+    },
+    {
+      "id": "n8",
+      "title": "The debug build in production",
+      "text": "A startup released a debug build to 1 million users. Attackers used adb to attach debuggers and extract user data.",
+      "lesson": "Debug"
+    },
+    {
+      "id": "n9",
+      "title": "The fake login screen",
+      "text": "Malware used tapjacking overlays to draw fake login screens over banking apps. Users typed credentials into the attacker UI.",
+      "lesson": "UI Security"
+    },
+    {
+      "id": "n10",
+      "title": "The hijacked deep link",
+      "text": "A food delivery app used custom URL schemes for OAuth. A malicious app registered the same scheme and stole 500000 tokens.",
+      "lesson": "Deep Links"
+    },
+    {
+      "id": "n11",
+      "title": "The implicit intent leak",
+      "text": "A messaging app sent photos via implicit intents. Any matching app could receive them. A spy app collected intimate photos.",
+      "lesson": "IPC"
+    },
+    {
+      "id": "n12",
+      "title": "The mutable pending intent",
+      "text": "A notification service created mutable pending intents. Attackers modified them to send SMS from victims phones.",
+      "lesson": "IPC"
+    },
+    {
+      "id": "n13",
+      "title": "The world-readable database",
+      "text": "A note-taking app stored notes with MODE_WORLD_READABLE. Any app could read private notes including saved passwords.",
+      "lesson": "Storage"
+    },
+    {
+      "id": "n14",
+      "title": "The log that leaked tokens",
+      "text": "A developer forgot to remove Log statements printing OAuth tokens. A competing app read logs and stole sessions.",
+      "lesson": "Logging"
+    },
+    {
+      "id": "n15",
+      "title": "The WebView XSS",
+      "text": "A news app loaded articles in WebView with JavaScript enabled. Malicious articles injected JavaScript that stole cookies.",
+      "lesson": "WebView"
+    },
+    {
+      "id": "n16",
+      "title": "The certificate not pinned",
+      "text": "A financial app used HTTPS but no pinning. Attackers with physical access installed a CA cert and intercepted all traffic.",
+      "lesson": "Network"
+    },
+    {
+      "id": "n17",
+      "title": "The SharedPreferences password",
+      "text": "A fitness app stored passwords in plain text SharedPreferences. When phone was sent for repair, credentials were extracted.",
+      "lesson": "Storage"
+    },
+    {
+      "id": "n18",
+      "title": "The exported activity",
+      "text": "A car companion app had exported activity that could remotely start engine. Attackers started 100 cars as proof of concept.",
+      "lesson": "Exported"
+    },
+    {
+      "id": "n19",
+      "title": "The SQL injection",
+      "text": "A contact manager had content provider vulnerable to SQL injection. Attackers extracted entire database via crafted URIs.",
+      "lesson": "IPC"
+    },
+    {
+      "id": "n20",
+      "title": "The broadcast spy",
+      "text": "A utility registered for BOOT_COMPLETED and SMS_RECEIVED without permissions. It sent all SMS to a command server.",
+      "lesson": "IPC"
+    }
+  ]
+}
