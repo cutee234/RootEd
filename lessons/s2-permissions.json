@@ -1,0 +1,53 @@
+{
+  "id": "s2-permissions",
+  "name": "Permissions Deep Dive",
+  "icon": "🔐",
+  "order": 2,
+  "lessons": [
+    {
+      "id": "s2_l1",
+      "order": 1,
+      "title": "Normal vs Dangerous Permissions",
+      "text": "Android has two types of permissions. Normal permissions are granted automatically at install time (like vibration). Dangerous permissions require user approval at runtime (like camera, contacts, location). Dangerous permissions are grouped into categories like CAMERA, CONTACTS, LOCATION.",
+      "example": "Normal permissions are like buying a movie ticket - you get it instantly. Dangerous permissions are like applying for a passport - you need approval from an authority (the user).",
+      "tfQuestion": "Camera permission is a normal permission granted automatically at install.",
+      "tfAnswer": false
+    },
+    {
+      "id": "s2_l2",
+      "order": 2,
+      "title": "Runtime Permission Flow",
+      "text": "When an app needs a dangerous permission, it must check if already granted. If not, it shows a system dialog. User can Allow, Deny, or Deny Forever. If denied forever, the app must direct user to Settings. Apps should handle denial gracefully.",
+      "example": "Think of it like asking a friend to borrow their car. First time they might say yes or no. If they say no firmly (deny forever), you should not keep asking - instead tell them where they can change their mind (Settings).",
+      "tfQuestion": "If a user denies a permission forever, the app can keep showing the permission dialog.",
+      "tfAnswer": false
+    },
+    {
+      "id": "s2_l3",
+      "order": 3,
+      "title": "Permission Groups",
+      "text": "Android groups related permissions together. For example, CAMERA group contains just the camera permission. CONTACTS group contains read and write contacts. LOCATION group has fine and coarse location. When you grant one permission in a group, the system may auto-grant others in the same group.",
+      "example": "Think of permission groups like a family. If you let one family member (read contacts) into your house, Android assumes you trust the whole family and may let others (write contacts) in too.",
+      "tfQuestion": "Granting one permission in a group can auto-grant other permissions in the same group.",
+      "tfAnswer": true
+    },
+    {
+      "id": "s2_l4",
+      "order": 4,
+      "title": "Permission Best Practices",
+      "text": "Only request permissions you truly need. Explain WHY you need them before asking. Handle denial gracefully. Never crash if permission is denied. Use foreground services instead of background location when possible. Remove permissions you no longer use.",
+      "example": "It is like being a good houseguest. Only enter rooms you need to. Explain why you need to enter. If told no, respect it. Do not sneak into rooms when no one is watching.",
+      "tfQuestion": "It is acceptable to crash your app if the user denies a permission.",
+      "tfAnswer": false
+    },
+    {
+      "id": "s2_l5",
+      "order": 5,
+      "title": "Checking Permissions in Code",
+      "text": "Use ContextCompat.checkSelfPermission() to check if a permission is granted. It returns PERMISSION_GRANTED or PERMISSION_DENIED. Use ActivityCompat.requestPermissions() to request. Handle the result in onRequestPermissionsResult(). Always check before using a feature that needs permission.",
+      "example": "Think of it like checking if you have your keys before trying to open the door. You would not just try the door and crash if locked. You check first (checkSelfPermission), then ask for keys if needed (requestPermissions).",
+      "tfQuestion": "You should check if a permission is granted before using a feature that requires it.",
+      "tfAnswer": true
+    }
+  ]
+}
