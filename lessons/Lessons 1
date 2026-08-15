@@ -1,0 +1,117 @@
+cat > /tmp/add_lessons.py << 'EOF'
+import os
+
+# Path to LessonContent.kt
+lesson_path = os.path.expanduser("~/RootEd/app/src/main/java/com/rooted/app/data/LessonContent.kt")
+
+sample_lessons = '''package com.rooted.app.data
+
+import com.rooted.app.data.Lesson
+
+object LessonContent {
+    val sections = listOf("Android Basics", "Permissions Deep Dive", "APK Anatomy")
+    
+    val all = listOf(
+        // Section 1: Android Basics
+        Lesson(
+            id = "l1",
+            title = "What is Android?",
+            section = "Android Basics",
+            text = "Android is a mobile operating system based on a modified version of the Linux kernel. It's the most popular OS for smartphones worldwide.",
+            example = "Think of Android like the brain of your phone - it manages everything from apps to hardware.",
+            tfQuestion = "Android is based on Windows kernel.",
+            tfAnswer = false
+        ),
+        Lesson(
+            id = "l2",
+            title = "What is an APK?",
+            section = "Android Basics",
+            text = "APK (Android Package Kit) is the file format used to distribute and install apps on Android. It's like a ZIP file containing all the app's code, resources, and manifest.",
+            example = "Just like .exe files install programs on Windows, .apk files install apps on Android.",
+            tfQuestion = "APK stands for Android Package Kit.",
+            tfAnswer = true
+        ),
+        Lesson(
+            id = "l3",
+            title = "Android Components",
+            section = "Android Basics",
+            text = "Android apps are built with four main components: Activities (screens), Services (background tasks), Broadcast Receivers (system events), and Content Providers (data sharing).",
+            example = "An Activity is like a single page in a book - each screen you see is an Activity.",
+            tfQuestion = "Services run in the foreground only.",
+            tfAnswer = false
+        ),
+        
+        // Section 2: Permissions Deep Dive
+        Lesson(
+            id = "l4",
+            title = "What are Permissions?",
+            section = "Permissions Deep Dive",
+            text = "Permissions are Android's way of protecting user privacy. Apps must request permission to access sensitive data or features like camera, contacts, or location.",
+            example = "When you install a flashlight app and it asks for Camera permission, that's Android's security system at work.",
+            tfQuestion = "Permissions protect user privacy and security.",
+            tfAnswer = true
+        ),
+        Lesson(
+            id = "l5",
+            title = "Normal vs Dangerous Permissions",
+            section = "Permissions Deep Dive",
+            text = "Normal permissions (like INTERNET) are auto-granted. Dangerous permissions (like CAMERA, CONTACTS) require user approval at runtime.",
+            example = "INTERNET permission is normal (auto-approved). READ_CONTACTS is dangerous (you must approve it).",
+            tfQuestion = "CAMERA permission is a normal permission.",
+            tfAnswer = false
+        ),
+        Lesson(
+            id = "l6",
+            title = "Permission Over-Privilege",
+            section = "Permissions Deep Dive",
+            text = "Many apps request more permissions than they need. A calculator app asking for SMS permission is suspicious and could be stealing your data.",
+            example = "If a simple game asks for permission to read your SMS messages, that's a red flag!",
+            tfQuestion = "Apps should only request permissions they actually need.",
+            tfAnswer = true
+        ),
+        
+        // Section 3: APK Anatomy
+        Lesson(
+            id = "l7",
+            title = "AndroidManifest.xml",
+            section = "APK Anatomy",
+            text = "The AndroidManifest.xml is the blueprint of your app. It declares permissions, activities, services, and app metadata. Every APK must have one.",
+            example = "Think of AndroidManifest.xml as the ID card of your app - it tells the system everything about the app.",
+            tfQuestion = "Every APK must have an AndroidManifest.xml file.",
+            tfAnswer = true
+        ),
+        Lesson(
+            id = "l8",
+            title = "classes.dex",
+            section = "APK Anatomy",
+            text = "classes.dex contains the compiled Java/Kotlin code of your app in Dalvik Executable format. This is the actual code that runs on your phone.",
+            example = "If the APK is a book, classes.dex is the story - it contains all the logic and functionality.",
+            tfQuestion = "classes.dex contains the app's executable code.",
+            tfAnswer = true
+        ),
+        Lesson(
+            id = "l9",
+            title = "resources.arsc",
+            section = "APK Anatomy",
+            text = "resources.arsc contains all the app's resources like strings, layouts, images, and styles in a compiled binary format for faster loading.",
+            example = "This file holds all the text, colors, and UI elements that make up the app's appearance.",
+            tfQuestion = "resources.arsc contains the app's compiled resources.",
+            tfAnswer = true
+        )
+    )
+    
+    fun lessonsOf(section: String): List<Lesson> = all.filter { it.section == section }
+    val totalCount = all.size
+}
+'''
+
+with open(lesson_path, 'w') as f:
+    f.write(sample_lessons)
+
+print("✅ Sample lessons added to app!")
+print("   - 3 sections with 9 lessons total")
+print("   - All lessons will now appear in Roadmap and Home Screen")
+print("   - No GitHub download needed!")
+EOF
+
+python3 /tmp/add_lessons.py
